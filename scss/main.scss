@@ -1,0 +1,380 @@
+@import 'config';
+@import 'utilities';
+@import 'buttons';
+@import 'helpers';
+@import 'menu';
+
+body {
+    background-color: fff;
+    font-family: $font-stack;
+    // line-height: 1.6;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.showcase {
+    background-color: $primary-color;
+    color: #fff;
+    height: 100vh;
+
+    // nav {
+    //     background-color: $super-dark-color;
+    //     padding: .5rem 0;
+    //     position: fixed;
+    //     width: 100%;
+    //     z-index: 1;
+
+    //     .nav-container {
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: space-between;
+
+    //         .navbar-brand {
+    //             padding: 0 1rem;
+    //         }
+
+    //         ul {
+    //             display: flex;
+    //             list-style-type: none;
+    //         }
+
+    //         li {
+    //             padding: 15px;
+    //         }
+
+    //         a:hover {
+    //         color: $secondary-color;
+    //         }
+
+    //         .navbar-menu {
+    //             display: none;
+    //         }
+
+    //         .hamburger {
+    //             position: relative;
+    //             z-index: 1;
+    //             right: 1rem;
+    //             top: 1rem;
+    //             height: 20px;
+    //             width: 28px;
+                
+    //             .hamburger-bar {
+    //                 height: 3px;
+    //                 width: 28px;
+    //                 background: #fff;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // .showcase-landing {
+    //     position: absolute;
+    //     top: 7rem;
+    //     left: 0;
+    // }
+
+    a {
+        color: $light-color;
+    }
+
+    &-landing {
+        .showcase-content {
+            margin-top: 15vh;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            img {
+                width: 70%;
+                order: -1;
+            }
+    
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+    
+            p {
+                margin: 20px 0;
+            }
+    
+            .btn-secondary {
+                color: darken($primary-color, 10%);
+            }
+        }
+    }
+}
+
+.services-section {
+    .services {
+        .service {
+            padding: 1rem;
+            background-color: $light-color;
+            border-radius: 2rem;
+            margin: 0 0 1rem 0;
+
+            img {
+                border: $primary-color solid .3rem;
+                border-radius: 2rem;
+            }
+
+            .service-content {
+                padding: 1rem 0 0 0;
+            }
+        }
+    }
+}
+
+.about-section {
+    background-color: $dark-color;
+
+    .abouts {
+        color: $light-color;
+
+        .about {
+            padding: 1rem;
+            background-color: lighten($dark-color, 10%);
+            border-radius: 2rem;
+            margin: 0 0 1rem 0;
+
+            img {
+                border: $primary-color solid .3rem;
+                border-radius: 50%;
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+    }
+
+    .about-descriptions {
+        color: $light-color;
+        background-color: lighten($dark-color, 10%);
+        border-radius: 2rem;
+        margin: 0 0 1rem 0;
+
+        .about-description {
+            padding: 1rem;
+            
+            img {
+                border: $primary-color solid .3rem;
+                border-radius: 2rem;
+            }
+        }
+    }
+}
+
+.features-section {
+    .feature {
+        padding: 1rem;
+        background-color: $light-color;
+        border-radius: 2rem;
+        margin: 0 0 1rem 0;
+        
+        .feature-content {
+            
+        }
+    }
+}
+
+.clients-section {
+    background-color: $dark-color;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+
+    .outer-slider {
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        width: 100vh;
+
+        .inner-slider {
+            position: relative;
+            top: 1rem;
+            width: calc(9 * 100vw);
+            height: 75vh;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            overflow: hidden;
+
+            .slide {
+                width: 90%;
+                margin: 1rem 1rem;
+                // padding: 1rem;
+
+                .comment {
+                    background: lighten($dark-color, 10%);
+                    padding: 1rem;
+                    border-radius: 2rem;
+                }
+
+                .client {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.contact-section {
+    .grid-container {
+        display: grid;
+        
+        .grid-item-a {
+            grid-area: a;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .grid-item-b {
+            grid-area: b;
+            padding: 1rem;
+
+            .contact-form {
+
+                .contact-form-inputs{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .input {
+                        padding: .5rem 0;
+
+                        input, textarea {
+                            padding: .5rem;
+                            font-size: 1rem;
+                            width: 100%;
+                            border: solid $primary-color;
+                            border-radius: .5rem;
+                            line-height: 2;
+                            background-color: transparent;
+                        }
+
+                        textarea {
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                }
+
+                .contact-form-submit {
+                    .submit {
+                        input {
+                            background-color: $primary-color;
+                            height: 2.5rem;
+                            width: 8rem;
+                            border: none;
+                            border-radius: 1rem;
+                            font-size: 1rem;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .grid-item-c {
+            grid-area: c;
+
+            .contact-content {
+                padding: 1rem;
+
+                .contact-details {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 1rem 0;
+
+                    .contact-detail {
+                        padding: 0 0 0 1rem;
+                    }
+                }
+
+                .contact-icon-details {
+                    display: flex;
+                    flex-direction: column;
+                    .social-icons {
+                        padding-top: 1rem;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+        grid-template-areas: 
+        'a'
+        'b'
+        'c'
+        ;
+    }
+}
+
+.sub-footer {
+    background-color: lighten($primary-color, 10%);
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+
+        .about-info {
+            line-height: 1.6;
+
+            .about-contents {
+                padding: 1rem;
+
+                .about-title {
+                    color: lighten($secondary-color, 10%);
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .links-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .links-box {
+                padding: 1rem;
+
+                .links-list {
+                    .links-title {
+                        color: lighten($secondary-color, 10%);
+                        font-size: 1.2rem;
+                    }
+
+                    ul {
+                        list-style: none;
+                        line-height: 1.8;
+                    }
+    
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    height: 12vh;
+    background-color: $primary-color;
+    color: #fff;
+    
+    .footer-content {
+        font-size: .9rem;
+        padding: 1rem 0;
+        text-align: center;
+        line-height: 1.5;
+    }
+}

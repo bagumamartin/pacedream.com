@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\Dev\\css refining"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "pacedream.com"
+	}
+}

@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$font-stack: Arial, Helvitica, sanserif;
+$light-color: #f4f4f4;
+$dark-color: grey;
+$super-dark-color: darken($dark-color, 90%);
+$primary-color: rgb(18, 184, 18);
+$secondary-color: yellow;
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
