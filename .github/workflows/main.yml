@@ -23,15 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: copy file via ssh key
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHSECRET }}
-          run: |
-            sudo su
-          source: "dist"
-          target: "/webapps/gcohs/pacedream"
+      - name: Deploy Bootstrap 5 static webpage for my-site
+        uses: appleboy/ssh-action@master # call a custom script by user appleboy for SSH on github
+        with: # all below inputs are specifically defined in ssh-action script
+          host: ${{secrets.HOST}} # IP address of the server
+          key: ${{secrets.SSHSECRET}} #private key of the server
+          username: ${{secrets.USERNAME}} # user of the server
+          port: ${{secrets.PORT}}
+          
+          script: |
+            cd /webapps/gcohs/pacedream.com # enter into the folder that will host the landing page for the first time
+            git pull # update the working directory with the latest from the github repo
+            echo 'Deployment successful to Digital Ocean' # Display message to reflect deployment status
