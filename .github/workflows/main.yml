@@ -25,22 +25,17 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: ssh connection
-        run: |
-          ssh -i ${{ secrets.SSHSECRET }} ubuntu@132.226.122.105
-          yes
-          sudo su
-          pwd
-        # uses: appleboy/ssh-action@master
-        # with:
-        #   host: 132.226.122.105
-        #   username: ubuntu
-        #   key: ${{ secrets.SSHSECRET }}
-        #   port: 22
-        #   script: |
-        #     sudo su
-        #     cd /webapps/gcohs/pacedream.com
-        #     git pull origin master
-        #     pwd        
+        uses: appleboy/ssh-action@master
+        with:
+          host: 132.226.122.105
+          username: ubuntu
+          key: ${{ secrets.SSHSECRET }}
+          port: 22
+          script: |
+            sudo su
+            cd /webapps/gcohs/pacedream.com
+            git status
+            pwd        
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
