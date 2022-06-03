@@ -28,6 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: ssh connection
         run: |
+          cd /webapps/gcohs/pacedream.com
+          pull git
           pwd
           ls        
       # Runs a set of commands using the runners shell
