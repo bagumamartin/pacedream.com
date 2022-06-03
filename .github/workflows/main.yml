@@ -22,6 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       # Runs a single command using the runners shell
       - name: ssh connection
@@ -34,7 +36,6 @@ jobs:
           script: |
             sudo su
             cd /webapps/gcohs/pacedream.com
-            git config --global --add safe.directory /webapps/gcohs/pacedream.com
             git config user.name Baguma Martin
             git config user.email amanyamartin05@gmail.com
             # git config github.token ${{ secrets.GITHUB_TOKEN }}
