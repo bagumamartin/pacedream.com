@@ -31,5 +31,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHSECRET }}
-          source: "tests/a.txt,tests/b.txt"
-          target: "test"
+          script: |
+            sudo su
+          source: "dist"
+          target: "/webapps/gcohs/pacedream"
