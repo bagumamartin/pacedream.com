@@ -33,6 +33,7 @@ jobs:
           KEY: ${{ secrets.SSHSECRET }}
           SCRIPT: |
             sudo su
+            pwd
         with:
           source: "dist/*"
           target: "/webapps/gcohs/pacedream.com"
