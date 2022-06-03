@@ -34,4 +34,5 @@ jobs:
           script: |
             cd /webapps/gcohs/pacedream.com # enter into the folder that will host the landing page for the first time
             git pull # update the working directory with the latest from the github repo
+            systemctl reload nginx
             echo 'Deployment successful to Digital Ocean' # Display message to reflect deployment status
