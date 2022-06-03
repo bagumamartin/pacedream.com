@@ -31,10 +31,10 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHSECRET }}
-          SCRIPT: |
+        with:
+          script: |
             sudo su
             pwd
-        with:
           source: "dist/*"
           target: "/webapps/gcohs/pacedream.com"
           strip_components: 1
