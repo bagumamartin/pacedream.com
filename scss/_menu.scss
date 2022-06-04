@@ -6,6 +6,11 @@ header {
     height: 10vh;
     @include transition-ease;
 
+    @include desktop {
+        display: flex;
+        flex-direction: right;
+    }
+
     a {
         color: white;
         text-decoration: none;
@@ -27,6 +32,11 @@ header {
     z-index: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: .7rem;
+
+    @include desktop {
+        top: -.6rem;
+        font-size: 1rem;
+    }
 }
 
 .menu-button {
@@ -38,6 +48,9 @@ header {
     width: 28px;
     cursor: pointer;
     @include transition-ease;
+    @include desktop {
+        display: none;
+    }
 
     &-burger {
         position: absolute;
@@ -90,6 +103,12 @@ header {
     width: 100vw;
     opacity: 0.98;
     visibility: hidden;
+    @include desktop {
+        width: 75%;
+        margin-left: 25%;
+        visibility: visible;
+        // position: static;
+    }
 
     &.open {
         visibility: visible;
@@ -108,6 +127,16 @@ header {
         transform: translateY(-100%);
         @include transition-ease;
 
+        @include desktop {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            padding: 0;
+            height: 10vh;
+            background-color: transparent;
+            transform: translateY(0);
+        }
+
         &.open {
             transform: translateY(0);
         }
@@ -117,6 +146,10 @@ header {
             @include transition-ease;
             transition-delay: .3s;
             padding: 1rem;
+
+            @include desktop {
+                transform: translateX(0);
+            }
 
             a {
                 font-size: 1.5rem;

@@ -1,3 +1,4 @@
+@import 'responsive';
 @import 'config';
 @import 'utilities';
 @import 'buttons';
@@ -91,10 +92,19 @@ a {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            @include desktop {
+                flex-direction: row;
+            }
     
             img {
                 width: 70%;
                 order: -1;
+
+                @include desktop {
+                    order: 1;
+                    width: 50%;
+                }
             }
     
             h1 {
@@ -128,6 +138,48 @@ a {
 
             .service-content {
                 padding: 1rem 0 0 0;
+            }
+
+            @include desktop {
+                display: flex;
+            }
+        }
+
+        #web-dev-service {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .service-image {
+                padding-left: .5rem;
+            }
+            
+            .service-content {
+                padding-right: .5rem;
+            }
+        }
+
+        #app-dev-service {
+            display: flex;
+
+            .service-image {
+                padding-right: .5rem;
+            }
+
+            .service-content {
+                padding-left: .5rem;
+            }
+        }
+
+        #hosting-service {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .service-image {
+                padding-left: .5rem;
+            }
+
+            .service-content {
+                padding-right: .5rem;
             }
         }
     }
