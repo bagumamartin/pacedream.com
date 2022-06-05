@@ -125,61 +125,45 @@ a {
 
 .services-section {
     .services {
+        @include desktop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
         .service {
             padding: 1rem;
             background-color: $light-color;
             border-radius: 2rem;
             margin: 0 0 1rem 0;
+            width: 1fr;
 
             img {
                 border: $primary-color solid .3rem;
                 border-radius: 2rem;
+                
             }
 
             .service-content {
                 padding: 1rem 0 0 0;
             }
+        }
 
-            @include desktop {
+        @include desktop {
+            #web-dev-service {
                 display: flex;
+                flex-direction: column;
             }
-        }
-
-        #web-dev-service {
-            display: flex;
-            flex-direction: row-reverse;
-
-            .service-image {
-                padding-left: .5rem;
+    
+            #app-dev-service {
+                display: flex;
+                flex-direction: column;
+                
             }
-            
-            .service-content {
-                padding-right: .5rem;
-            }
-        }
-
-        #app-dev-service {
-            display: flex;
-
-            .service-image {
-                padding-right: .5rem;
-            }
-
-            .service-content {
-                padding-left: .5rem;
-            }
-        }
-
-        #hosting-service {
-            display: flex;
-            flex-direction: row-reverse;
-
-            .service-image {
-                padding-left: .5rem;
-            }
-
-            .service-content {
-                padding-right: .5rem;
+    
+            #hosting-service {
+                display: flex;
+                flex-direction: column;
             }
         }
     }
@@ -187,9 +171,19 @@ a {
 
 .about-section {
     background-color: $dark-color;
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr;
+        // grid-template-rows: 1fr 1fr;
+    }
 
     .abouts {
         color: $light-color;
+        @include desktop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
 
         .about {
             padding: 1rem;
@@ -212,9 +206,17 @@ a {
         border-radius: 2rem;
         margin: 0 0 1rem 0;
 
+        @include desktop {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         .about-description {
             padding: 1rem;
-            
+        }
+
+        .about-description-image {
+            padding: 1rem;
             img {
                 border: $primary-color solid .3rem;
                 border-radius: 2rem;
@@ -366,6 +368,13 @@ a {
         'b'
         'c'
         ;
+
+        @include desktop {
+            grid-template-areas: 
+            'a a'
+            'b c'
+            ;
+        }
     }
 }
 
