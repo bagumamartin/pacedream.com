@@ -231,9 +231,34 @@ a {
         background-color: $light-color;
         border-radius: 2rem;
         margin: 0 0 1rem 0;
-        
-        .feature-content {
-            
+
+        @include desktop {
+            display: grid;
+
+            .feature-content {
+                grid-area: feature-content;
+            }
+
+            .feature-image {
+                grid-area: feature-image;
+            }
+        }
+    }
+
+    @include desktop {
+        #custom-design-feature {
+            grid-template-areas: 
+            'feature-content feature-image';
+        }
+    
+        #advanced-capabilities-feature {
+            grid-template-areas: 
+            'feature-image feature-content';
+        }
+
+        #industry-specific-solutions-feature {
+            grid-template-areas: 
+            'feature-content feature-image';
         }
     }
 }
@@ -337,6 +362,10 @@ a {
         .grid-item-c {
             grid-area: c;
 
+            i {
+                color: $primary-color;
+            }
+
             .contact-content {
                 padding: 1rem;
 
@@ -347,6 +376,10 @@ a {
 
                     .contact-detail {
                         padding: 0 0 0 1rem;
+
+                        .contact {
+                            color: $primary-color;
+                        }
                     }
                 }
 
@@ -358,6 +391,7 @@ a {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
+                        list-style: none;
                     }
                 }
             }
@@ -374,6 +408,9 @@ a {
             'a a'
             'b c'
             ;
+
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
@@ -381,10 +418,19 @@ a {
 .sub-footer {
     background-color: lighten($primary-color, 10%);
 
+    @include desktop {
+        // height: 50vh;
+    }
+
     .infos {
         display: flex;
         flex-direction: column;
         color: #fff;
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: .5fr 1fr;
+        }
 
         .about-info {
             line-height: 1.6;
@@ -396,6 +442,10 @@ a {
                     color: lighten($secondary-color, 10%);
                     font-size: 1.2rem;
                 }
+
+                .about-content {
+                    padding-bottom: 1rem;
+                }
             }
         }
 
@@ -403,6 +453,11 @@ a {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            @include desktop {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
 
             .links-box {
                 padding: 1rem;
