@@ -149,6 +149,7 @@ header {
 
             @include desktop {
                 transform: translateX(0);
+                padding: .6rem
             }
 
             a {

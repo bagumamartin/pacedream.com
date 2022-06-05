@@ -140,8 +140,7 @@ a {
 
             img {
                 border: $primary-color solid .3rem;
-                border-radius: 2rem;
-                
+                border-radius: 2rem; 
             }
 
             .service-content {
@@ -190,12 +189,20 @@ a {
             background-color: lighten($dark-color, 10%);
             border-radius: 2rem;
             margin: 0 0 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-            img {
+            .about-icon {
+                text-align: center;
+                padding: .3rem;
+                padding-top: .7rem;
+                color: lighten($primary-color, 10%);
                 border: $primary-color solid .3rem;
                 border-radius: 50%;
-                width: 5rem;
-                height: 5rem;
+                width: 7rem;
+                height: 7rem;
             }
         }
     }
@@ -232,8 +239,15 @@ a {
         border-radius: 2rem;
         margin: 0 0 1rem 0;
 
+        img {
+            border: $primary-color solid .3rem;
+            border-radius: 2rem; 
+        }
+
         @include desktop {
+            margin: 0;
             display: grid;
+            gap: 1rem;
 
             .feature-content {
                 grid-area: feature-content;
