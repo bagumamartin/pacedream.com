@@ -7,6 +7,10 @@
     &:hover {
         transform: scale(.98);
     }
+
+    @include short-phones {
+        font-size: .7rem;
+    }
 }
 
 .btn-primary {

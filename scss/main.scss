@@ -111,9 +111,28 @@ a {
                 font-size: 2rem;
                 line-height: 1.2;
             }
-    
+
+            
             p {
                 margin: 20px 0;
+
+                @mixin  short-phones {
+                    font-size: .7rem;
+                }
+            }
+            
+            @include short-phones {
+                h2 {
+                    font-size: .9rem;
+                }
+
+                h3 {
+                    font-size: .8rem;
+                }
+
+                p {
+                    font-size: .7rem;
+                }
             }
     
             .btn-secondary {
