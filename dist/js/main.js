@@ -47,3 +47,15 @@ function toggleMenuitem () {
         showMenu = false;
     }
 }
+
+function sendEmail () {
+    Email.send({
+        SecureToken : "aa2168f1-2e61-40d9-92ea-4ef62a53f115",
+        To : 'amanyamartin05@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById('subject').value,
+        Body : `My name is ${document.getElementById('name').value}, am contacting you about; ${document.getElementById('message').value}. Contact me on ${document.getElementById('telephone-number').value}.`
+    }).then(
+      message => alert(message)
+    );
+}

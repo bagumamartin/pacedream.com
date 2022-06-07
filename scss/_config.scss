@@ -4,6 +4,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-padding-top: 10%;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 $font-stack: 'Poppins', Arial, Helvitica, sanserif;
